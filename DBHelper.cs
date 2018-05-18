@@ -13,33 +13,34 @@ namespace Helpders
     {
         // **** Sample Usage ***
         //   
-        //   sql string = "select * from table where field1 = {1} and field2 = {2}"
+        //   sql string = "select * from table where field1 = {1} and field2 = {2}";
         //
-        //   dt DataTable = DBs.dbSample.GetDataTableSQL(sql, "value1", "value2")
-        //   if (dt = null)
-        //       ex Exception = DBs.dbSample.GetException()
-        //       print(ex.Message)
-        //   } if
+        //   DataTable dt = DBs.dbSample.GetDataTableSQL(sql, "value1", "value2");
+        //   if (dt == null)
+        //   {
+        //       Exception ex = DBs.dbSample.GetException();
+        //       print(ex.Message);
+        //   }
         //----------------------------------
         //
-        //   sql string = "select ParentItem from Kits WHERE CompanyID = {1}"
-        //   sqlCmd System.Data.SqlClient.SqlCommand = DBs.dbSample.NewSQLCommandSQL(sql, DOXCookie.CompanyID)
-        //   dt DataTable
+        //   sql string = "select ParentItem from Kits WHERE CompanyID = {1}";
+        //   System.Data.SqlClient.SqlCommand sqlCmd  = DBs.dbSample.NewSQLCommandSQL(sql, "parameter1");
+        //   DataTable dt;
         //
         //   if (DBs.dbSample.LoadSQLCommand(sqlCmd))
-        //       dt = DBs.dbSample.datatbl
+        //       dt = DBs.dbSample.datatbl;
         //   } else {
         //        //Error!
-        //        fncBackMsg.Value = "Error Getting Kit Items!"
-        //        return False
-        //   } if
+        //        ErrorMsg = "Error Getting Items!";
+        //        return False;
+        //   }
         //----------------------------------
         //
-        //   dt DataTable = DBs.dbSample.GetDataTableSP("sp_GetValues", "@startDate,@}Date", "2017-01-01", "2017-12-31")
-        //   if (dt = null)
-        //       ex Exception = DBs.dbSample.GetException()
-        //       print(ex.Message)
-        //   } if
+        //   DataTable dt = DBs.dbSample.GetDataTableSP("sp_GetValues", "@startDate,@endDate", "2017-01-01", "2017-12-31");
+        //   if (dt == null)
+        //       Exception ex = DBs.dbSample.GetException();
+        //       print(ex.Message);
+        //   }
 
 
         public static DBClass dbSample = new DBClass("");
